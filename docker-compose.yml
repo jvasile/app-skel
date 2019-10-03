@@ -1,20 +1,19 @@
 version: '3.6'
 services:
   db:
-    build: couch
+    image: postgres:12
+    restart: always
     ports:
-      - "5984:5984"
+      - "5432:5432"
     volumes:
-      - data-volume:/opt/couchdb/data
+      - db-volume:/var/lib/postgresql/data
     environment:
-      - COUCHDB_USER=${couchdb_user}
-      - COUCHDB_PASSWORD=${couchdb_password}
-      - COUCHDB_SECRET=${couchdb_secret}
-    healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:5498"]
-        interval: 1m30s
-        timeout: 10s
-        retries: 3
+      - POSTGRES_PASSWORD=${postgres_password}
+#    healthcheck:
+#        test: ["CMD", "curl", "-f", "http://localhost:5498"]
+#        interval: 1m30s
+#        timeout: 10s
+#        retries: 3
   web:
     build: app
     #init: True # version 3.7+ only
@@ -22,9 +21,7 @@ services:
     ports:
       - "9898:3001"
     environment:
-      - COUCHDB_USER=${couchdb_user}
-      - COUCHDB_PASSWORD=${couchdb_password}
-      - COUCHDB_SECRET=${couchdb_secret}
+      - POSTGRES_PASSWORD=${postgres_password}
     depends_on:
       - db
     healthcheck:
@@ -33,5 +30,5 @@ services:
         timeout: 10s
         retries: 3
         
-  volumes:
-    data-volume:
+volumes:
+  db-volume:
