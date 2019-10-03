@@ -19,7 +19,7 @@ services:
     #init: True # version 3.7+ only
     restart: on-failure
     ports:
-      - "9898:3001"
+      - "9898:9898"
     environment:
       - POSTGRES_PASSWORD=${postgres_password}
     depends_on:

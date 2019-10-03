@@ -29,3 +29,4 @@ Finally, just run the app directly:
     cd app
     npm start
     
+Then, point your browser at localhost:9898
