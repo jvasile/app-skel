@@ -27,7 +27,7 @@ RUN npm install
 
 COPY . .
 
-RUN node_modules/browserify/bin/cmd.js -o backend/public/bundle.js frontend/main.js
+RUN node_modules/browserify/bin/cmd.js -o backend/public/js/bundle.js frontend/main.js
 ENTRYPOINT ["npm"]
 #CMD ["start"]
 CMD ["run", "backend"]
