@@ -65,7 +65,7 @@ Then, point your browser at localhost:9898
 
 ## Keeping The Skeleton Up To Date
 
-### Pulling changes
+### Pulling skeleton changes
 
     git co app-skel
     git fetch
@@ -74,7 +74,7 @@ Then, point your browser at localhost:9898
     git rebase app-skel
     [ Resolve conflicts ]
     
-### Pushing your changes upstream
+### Pushing your skeleton changes upstream
 
     git push app-skel HEAD:master
     
