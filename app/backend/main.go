@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
 
 func main() {
 	http.Handle("/", http.FileServer(http.Dir("./public")))
