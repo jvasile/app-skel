@@ -32,7 +32,6 @@ in.  You can also offer changes back.
     ./generate_skeleton
 
 [Note we haven't implemented the template file or generate_skeleton yet.]
-
 ## Docker Deploy
 
 You'll want to set postgres_password in your environment before
@@ -63,3 +62,19 @@ Finally, just run the app directly:
     npm start
     
 Then, point your browser at localhost:9898
+
+## Keeping The Skeleton Up To Date
+
+### Pulling changes
+
+    git co app-skel
+    git fetch
+    git rebase app-skel
+    git co master
+    git rebase app-skel
+    [ Resolve conflicts ]
+    
+### Pushing your changes upstream
+
+    git push app-skel HEAD:master
+    
