@@ -1,6 +1,8 @@
-# Twitter Explorer
+# Golang Gin / React / Postgres template
 
-Mess around wtih Twitter APIs.
+This is a slim dockerized setup for Postgres + Golang Gin + React.
+
+## Docker Deploy
 
 You'll want to set postgres_password in your environment before
 running.  This should get you going:
