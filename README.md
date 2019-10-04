@@ -15,11 +15,18 @@ soonish.
 
 ## Setup
 
-    git clone git@github.com:jvasile/app-skel.git
-    git set-url origin [new repo]
+You'll want to base your repo on this one.  That is, your new repo
+should always be a bunch of commits on top of all the commits in this
+repo.  That way, when this repo updates, you can pull those changes
+in.  You can also offer changes back.
+
+    git clone git@github.com:jvasile/app-skel.git NEWREPO
+    cd NEWREPO
+    git remote set-url origin [new repo]
+    git push
     git remote add app-skel git@github.com:jvasile/app-skel.git
+    git fetch app-skel
     git branch --track app-skel app-skel/master
-    git co master
     
     Edit the template file.
     ./generate_skeleton
