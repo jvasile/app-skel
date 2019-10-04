@@ -59,7 +59,7 @@ Then, bring up a postgres instance (replace the password with your own):
 Finally, just run the app directly:
 
     cd app
-    npm start
+    npm run start OR npm run watch
     
 Then, point your browser at localhost:9898
 
