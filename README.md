@@ -56,10 +56,11 @@ Then, bring up a postgres instance (replace the password with your own):
     export postgres_password=partytimenow
     docker-compose up db
     
-Finally, just run the app directly:
+Finally, just run the app directly (again, replace the password with your own)::
 
     cd app
-    npm run start OR npm run watch
+    export postgres_password=partytimenow
+    npm start OR npm run watch
     
 Then, point your browser at localhost:9898
 
