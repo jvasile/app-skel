@@ -10,7 +10,7 @@ more if we like.
 I have a private branch with some ansible stuff to support all this.
 Not ready to push yet.
 
-Python+flask is implemented in a separate repo.  I'll add it hear
+Python+flask is implemented in a separate repo.  I'll add it here
 soonish.
 
 ## Setup
@@ -62,7 +62,8 @@ Finally, just run the app directly (again, replace the password with your own)::
     export postgres_password=partytimenow
     npm start OR npm run watch
     
-Then, point your browser at localhost:9898
+Then, point your browser at localhost:9898 or localhost:9897 if you're
+using the watch functionality.
 
 ## Keeping The Skeleton Up To Date
 
