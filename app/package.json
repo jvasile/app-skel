@@ -1,8 +1,9 @@
 {
-  "name": "golang-react-template",
-  "author": "Andrew Odewahn",
+  "name": "app-skel",
+  "author": "James Vasile",
   "version": "0.1.0",
   "description": "Startup template for golang apps with React frontend",
+  "license":"AGPLv3", 
   "main": "",
   "scripts": {
       "backend": "cd backend; go run main.go",
