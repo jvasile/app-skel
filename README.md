@@ -31,6 +31,10 @@ in.  You can also offer changes back.
     Edit the template file.
     ./generate_skeleton
 
+We can use Goose for migrations:
+
+     go get github.com/pressly/goose/cmd/goose
+     
 [Note we haven't implemented the template file or generate_skeleton yet.]
 ## Docker Deploy
 
