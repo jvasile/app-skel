@@ -3,15 +3,15 @@
   "author": "James Vasile",
   "version": "0.1.0",
   "description": "Startup template for golang apps with React frontend",
-  "license":"AGPLv3", 
+  "license": "AGPLv3",
   "main": "",
   "scripts": {
-      "backend": "cd backend; go run main.go",
-      "frontend": "./node_modules/browserify/bin/cmd.js -o backend/public/js/bundle.js -v frontend/main.js",
-      "start": "npm run frontend & npm run backend",      
-      "watch": "npm run watch_front & npm run watch_back",
-      "watch_back": "cd backend; gin -i -a 9898 -p 9897",
-      "watch_front": "watchify -o backend/public/js/bundle.js -v -d frontend/main.js"
+    "backend": "cd backend; go run main.go",
+    "frontend": "./node_modules/browserify/bin/cmd.js -o backend/public/js/bundle.js -v frontend/main.js",
+    "start": "npm run frontend & npm run backend",
+    "watch": "npm run watch_front & npm run watch_back",
+    "watch_back": "cd backend; gin -i -a 9898 -p 9897",
+    "watch_front": "watchify -o backend/public/js/bundle.js -v -d frontend/main.js"
   },
   "dependencies": {
     "browserify": "^16.5.0",
