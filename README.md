@@ -18,6 +18,14 @@ postgres DB is not exposed to lcoalhost.
 
 ## Setup
 
+Install some dependencies:
+
+    go get golang.org/x/crypto/scrypt
+    go get github.com/jinzhu/gorm
+    go get github.com/jinzhu/gorm/dialects/postgres
+    go get github.com/gin-gonic/gin
+    go get github.com/gin-gonic/contrib/static
+
 You'll want to base your repo on this one.  That is, your new repo
 should always be a bunch of commits on top of all the commits in this
 repo.  That way, if you ever want to rebase (or just cherrypick) on an
