@@ -4,6 +4,7 @@ import (
 	//"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	//"golang.org/x/crypto/scrypt"
 	"log"
 	"net/http"
 	"os"
@@ -13,6 +14,7 @@ import (
 type User struct {
 	gorm.Model // fields ID, CreatedAt, UpdatedAt, DeletedAt will be added
 	Name string `gorm:"size:255"`
+	PassHash []byte `gorm:"size:32"` //scrypt.Key(pass, salt, 65536, 8, 1, 32)
 }
 
 func main() {
