@@ -7,6 +7,7 @@
   "main": "",
   "scripts": {
     "backend": "cd backend; go run main.go",
+    "depends": "cd backend; go list -f '{{ join .Imports \"\\n\" }}' | grep '/' | xargs go get -u",
     "frontend": "./node_modules/browserify/bin/cmd.js -o backend/public/js/bundle.js -v frontend/main.js",
     "start": "npm run frontend & npm run backend",
     "watch": "npm run watch_front & npm run watch_back",
