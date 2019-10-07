@@ -16,7 +16,7 @@ type User struct {
 }
 
 func main() {
-	log.Pringln("Starting app")
+	log.Println("Starting app")
 
 	// Open Database Connection
 	// Postgres User and Database name are both "postgres"
@@ -32,7 +32,7 @@ func main() {
 	
 	// Setup HTTP handler
 	http.Handle("/", http.FileServer(http.Dir("./public")))
-	err := http.ListenAndServe(":9898", nil)
+	err = http.ListenAndServe(":9898", nil)
 	if err!=nil{
 		panic("Error starting web server: " + err.Error())
 	} 
