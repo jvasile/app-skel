@@ -1,7 +1,8 @@
 package main
 
 import (
-	//"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/contrib/static"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	//"golang.org/x/crypto/scrypt"
@@ -15,6 +16,16 @@ type User struct {
 	gorm.Model // fields ID, CreatedAt, UpdatedAt, DeletedAt will be added
 	Name string `gorm:"size:255"`
 	PassHash []byte `gorm:"size:32"` //scrypt.Key(pass, salt, 65536, 8, 1, 32)
+}
+
+
+func initializeRoutes(router *gin.Engine) {
+	router.Use(static.Serve("/", static.LocalFile("./public", true)))
+	router.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
 }
 
 func main() {
@@ -33,9 +44,10 @@ func main() {
 	db.Debug().AutoMigrate(&User{}) 
 	
 	// Setup HTTP handler
-	http.Handle("/", http.FileServer(http.Dir("./public")))
-	err = http.ListenAndServe(":9898", nil)
-	if err!=nil{
+	router := gin.Default()
+	initializeRoutes(router)
+	err = router.Run(":9898")
+	if err != nil{
 		panic("Error starting web server: " + err.Error())
-	} 
+	}
 }
