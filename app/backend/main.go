@@ -41,7 +41,7 @@ func main() {
 	log.Println("DB Pass:", os.Getenv("postgres_password"))
 	db, err := gorm.Open("postgres", "host=localhost port=5432 sslmode=disable user=postgres dbname=postgres password=" + os.Getenv("postgres_password"))
 	defer db.Close()
-	if err!=nil{
+	if err != nil{
 		panic("DB Open Error: " + err.Error())
 	} 
 
