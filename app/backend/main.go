@@ -15,6 +15,7 @@ import (
 type User struct {
 	gorm.Model // fields ID, CreatedAt, UpdatedAt, DeletedAt will be added
 	Name string `gorm:"size:255"`
+	Email string `gorm:"size:255"`
 	PassHash []byte `gorm:"size:32"` //scrypt.Key(pass, salt, 65536, 8, 1, 32)
 }
 
