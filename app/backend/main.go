@@ -18,8 +18,12 @@ type User struct {
 	PassHash []byte `gorm:"size:32"` //scrypt.Key(pass, salt, 65536, 8, 1, 32)
 }
 
+func testHandler(c *gin.Context) {
+	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte("TEST"))
+}
 
 func initializeRoutes(router *gin.Engine) {
+	router.GET("/test", testHandler)
 	router.Use(static.Serve("/", static.LocalFile("./public", true)))
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
